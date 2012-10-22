@@ -44,10 +44,10 @@ public abstract class OauthHandle {
 				sqlite.open(true);
 				sqlite.insert(holder.token);
 				sqlite.close();
-				holder.listener.onWvOauthSuccess(holder.token);
+				holder.listener.onOauthSuccess(holder.token);
 				break;
 			case MSG_ERROR:
-				holder.listener.onWvOauthError();
+				holder.listener.onOauthError();
 				break;
 			}
 		};

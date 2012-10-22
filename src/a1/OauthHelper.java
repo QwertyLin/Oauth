@@ -45,7 +45,7 @@ public class OauthHelper {
 			public void onProgressChanged(WebView view, int newProgress) {
 				if (!isLoadingFinish && newProgress > 30) {
 					isLoadingFinish = true;
-					listener.onWvOauthLoadingFinish();
+					listener.onOauthLoadingFinish();
 				}
 			}
 		});
@@ -59,7 +59,7 @@ public class OauthHelper {
 				Matcher m = p.matcher(url);
 				if (m.find() && index == 0) {
 					index++;
-					listener.onWvOauthAuthing();
+					listener.onOauthAuthing();
 					CookieManager.getInstance().removeAllCookie();//clean cookie
 					webView.setVisibility(View.GONE);
 					handle.parseUrl(ctx, m, listener);

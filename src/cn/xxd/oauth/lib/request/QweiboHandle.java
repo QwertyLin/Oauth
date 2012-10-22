@@ -50,11 +50,11 @@ public class QweiboHandle extends OauthHandle {
 		//QLog.log(this, "access_token=" + token.getToken() + " expires_in=" + token.getExpireTime() + " openid=" + token.getId());
 		if(token.getExpireTime() == 0 || token.getToken() == null || token.getToken().equals("")){
 			//QLog.log(this, "onCheckToken error");
-			listener.onWvOauthError();
+			listener.onOauthError();
 			return;
 		}
 		if(token.getId() == null || token.getId().equals("")){
-			listener.onWvOauthError();
+			listener.onOauthError();
 			return;
 		}
 		new Thread() {

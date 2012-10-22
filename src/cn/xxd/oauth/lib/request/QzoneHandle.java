@@ -51,7 +51,7 @@ public class QzoneHandle extends OauthHandle {
 		//QLog.log(this, "access_token=" + token.getToken() + " expires_in=" + token.getExpireTime());
 		if(token.getExpireTime() == 0 || token.getToken() == null || token.getToken().equals("")){
 			//QLog.log(this, "onCheckToken error");
-			listener.onWvOauthError();
+			listener.onOauthError();
 			return;
 		}
 		new Thread() {

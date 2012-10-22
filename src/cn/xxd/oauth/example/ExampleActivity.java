@@ -25,22 +25,22 @@ public class ExampleActivity extends Activity implements OnOauthListener {
     }
 
 	@Override
-	public void onWvOauthLoadingFinish() {
+	public void onOauthLoadingFinish() {
 		pb.setVisibility(View.GONE);
 	}
 
 	@Override
-	public void onWvOauthAuthing() {
+	public void onOauthAuthing() {
 		pb.setVisibility(View.VISIBLE);
 	}
 
 	@Override
-	public void onWvOauthSuccess(Token token) {
+	public void onOauthSuccess(Token token) {
 		Toast.makeText(this, "绑定成功", Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
-	public void onWvOauthError() {
+	public void onOauthError() {
 		// TODO Auto-generated method stub
 		
 	}
