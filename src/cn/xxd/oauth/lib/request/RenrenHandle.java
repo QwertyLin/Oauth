@@ -11,7 +11,6 @@ import cn.xxd.oauth.lib.OauthHandle;
 import cn.xxd.oauth.lib.OnOauthListener;
 import cn.xxd.oauth.lib.Token;
 import cn.xxd.oauth.lib.UnAuthException;
-import cn.xxd.oauth.lib.OauthHandle.Holder;
 
 
 import a.OauthHelper;
