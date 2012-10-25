@@ -10,7 +10,6 @@ import cn.xxd.oauth.lib.OauthHandle;
 import cn.xxd.oauth.lib.OnOauthListener;
 import cn.xxd.oauth.lib.Token;
 import cn.xxd.oauth.lib.UnAuthException;
-import cn.xxd.oauth.lib.OauthHandle.Holder;
 
 
 import a1.OauthHelper;
@@ -20,7 +19,7 @@ import android.os.Message;
 
 public class QzoneHandle extends OauthHandle {
 	
-	protected static final String CLIENT_ID = "100246308";
+	protected static final String CLIENT_ID = "100246301";
 	
 	@Override
 	public int getType() {

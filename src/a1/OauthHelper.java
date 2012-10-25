@@ -10,9 +10,13 @@ import cn.xxd.oauth.lib.OnOauthListener;
 import cn.xxd.oauth.lib.Token;
 import cn.xxd.oauth.lib.TokenSqilte;
 import cn.xxd.oauth.lib.UnAuthException;
+import cn.xxd.oauth.lib.request.QweiboPostPic;
 import cn.xxd.oauth.lib.request.QweiboPostText;
+import cn.xxd.oauth.lib.request.QzonePostPic;
 import cn.xxd.oauth.lib.request.QzonePostText;
+import cn.xxd.oauth.lib.request.RenrenPostPic;
 import cn.xxd.oauth.lib.request.RenrenPostText;
+import cn.xxd.oauth.lib.request.SinaPostPic;
 import cn.xxd.oauth.lib.request.SinaPostText;
 
 import android.content.Context;
@@ -109,6 +113,23 @@ public class OauthHelper {
 			break;
 		case TYPE_RENREN:
 			RenrenPostText.postText(token, text);
+			break;
+		}
+	}
+	
+	public static void postPic(int type, Token token, String text, String pic, String lat, String lng) throws UnAuthException, Exception{
+		switch(type){
+		case TYPE_SINA:
+			SinaPostPic.postPic(token, text, pic, lat, lng);
+			break;
+		case TYPE_QWEIBO:
+			QweiboPostPic.postPic(token, text, pic);
+			break;
+		case TYPE_QZONE:
+			QzonePostPic.postPic(token, "相册名", text, pic);
+			break;
+		case TYPE_RENREN:
+			RenrenPostPic.postPic(token, text, pic);
 			break;
 		}
 	}

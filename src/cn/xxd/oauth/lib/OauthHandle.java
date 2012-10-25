@@ -69,7 +69,7 @@ public abstract class OauthHandle {
 		}
 	}
 	
-	protected String httpGet(String urlStr) throws IOException {
+	protected static String httpGet(String urlStr) throws IOException {
     	HttpURLConnection conn = null;
     	InputStream in = null;
 		BufferedReader bufferedReader = null;
