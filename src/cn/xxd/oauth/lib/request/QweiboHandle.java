@@ -24,7 +24,7 @@ public class QweiboHandle extends OauthHandle {
 	
 	@Override
 	public int getType() {
-		return OauthHelper.TYPE_QWEIBO;
+		return TYPE_QWEIBO;
 	}
 
 	@Override

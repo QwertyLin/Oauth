@@ -23,7 +23,7 @@ public class QzoneHandle extends OauthHandle {
 	
 	@Override
 	public int getType() {
-		return OauthHelper.TYPE_QZONE;
+		return TYPE_QZONE;
 	}
 
 	@Override

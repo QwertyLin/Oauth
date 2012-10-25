@@ -30,11 +30,11 @@ import android.webkit.WebViewClient;
 
 public class OauthHelper {
 	
-	public static final int 
-	TYPE_SINA = 1, //http://open.weibo.com/
-	TYPE_QWEIBO = 2, //http://dev.t.qq.com/
-	TYPE_QZONE = 3, //http://opensns.qq.com/
-	TYPE_RENREN = 4;
+	private static final int 
+	TYPE_SINA = OauthHandle.TYPE_SINA, //http://open.weibo.com/
+	TYPE_QWEIBO = OauthHandle.TYPE_QWEIBO, //http://dev.t.qq.com/
+	TYPE_QZONE = OauthHandle.TYPE_QZONE, //http://opensns.qq.com/
+	TYPE_RENREN = OauthHandle.TYPE_RENREN;
 	
 	public OauthHelper(final Context ctx, final OnOauthListener listener, final OauthHandle handle, final WebView webView){
 		WebSettings set = webView.getSettings();

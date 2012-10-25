@@ -27,6 +27,12 @@ import android.content.Context;
 import android.os.Handler;
 
 public abstract class OauthHandle {
+	
+	public static final int 
+		TYPE_SINA = 1, //http://open.weibo.com/
+		TYPE_QWEIBO = 2, //http://dev.t.qq.com/
+		TYPE_QZONE = 3, //http://opensns.qq.com/
+		TYPE_RENREN = 4;
 
 	public abstract int getType();
 	public abstract String getAuthUrl();

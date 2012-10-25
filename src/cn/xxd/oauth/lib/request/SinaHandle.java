@@ -25,7 +25,7 @@ public class SinaHandle extends OauthHandle {
 	
 	@Override
 	public int getType() {
-		return OauthHelper.TYPE_SINA;
+		return TYPE_SINA;
 	}
 
 	@Override

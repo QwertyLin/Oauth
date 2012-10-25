@@ -21,12 +21,12 @@ import android.os.Message;
 public class RenrenHandle extends OauthHandle {
 	
 	protected static final String 
-		RENREN_CLIENT_ID = "ce90074fea9c4650b6c860aaf149c758", 
-		RENREN_CLIENT_SECRET = "1edb76174931407f80c25984385f176a";
+		RENREN_CLIENT_ID = "0783b9ee1a2c4f28b4cb57a418ba15c2", 
+		RENREN_CLIENT_SECRET = "07e5b44f4499486cad0a451857bc3df8";
 	
 	@Override
 	public int getType() {
-		return OauthHelper.TYPE_RENREN;
+		return TYPE_RENREN;
 	}
 
 	@Override
