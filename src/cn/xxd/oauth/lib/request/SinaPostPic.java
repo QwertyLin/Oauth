@@ -10,7 +10,7 @@ import cn.xxd.oauth.lib.UnAuthException;
 
 public class SinaPostPic extends SinaHandle {
 
-	public static String postPic(Token token, String text, String pic, String lat, String lng) throws IOException, UnAuthException{
+	public static void postPic(Token token, String text, String pic, String lat, String lng) throws IOException, UnAuthException{
 		if(token == null || isTokenExpire(token)){
 			throw new UnAuthException();
 		}
@@ -45,6 +45,9 @@ public class SinaPostPic extends SinaHandle {
 		params.append("Content-Disposition: form-data; name=\"" + "pic" + "\"; filename=\"" + new File(pic).getName() + "\"\r\n");
 	    params.append("Content-Type: " + "image/x-png" + "\r\n\r\n");
 	    //
-		return httpPost("https://upload.api.weibo.com/2/statuses/upload.json", params.toString(), "-----114975832116442893661388290519", pic);
+		String result = httpPost("https://upload.api.weibo.com/2/statuses/upload.json", params.toString(), "-----114975832116442893661388290519", pic);
+		if(!result.contains("thumbnail_pic")){
+			throw new IOException();
+		}
 	}
 }

@@ -8,7 +8,7 @@ import cn.xxd.oauth.lib.UnAuthException;
 
 public class QweiboPostPic extends QweiboHandle {
 
-	public static String postPic(Token token, String text, String pic) throws IOException, UnAuthException{
+	public static void postPic(Token token, String text, String pic) throws IOException, UnAuthException{
 		if(token == null || isTokenExpire(token)){
 			throw new UnAuthException();
 		}
@@ -48,7 +48,10 @@ public class QweiboPostPic extends QweiboHandle {
 		params.append("Content-Disposition: form-data; name=\"" + "pic" + "\"; filename=\"" + "pic.png" + "\"\r\n");
         params.append("Content-Type: " + "application/octet-stream" + "\r\n\r\n");
         //
-		return httpPost("https://open.t.qq.com/api/t/add_pic", params.toString(), "-----114975832116442893661388290519", pic);
+		String result = httpPost("https://open.t.qq.com/api/t/add_pic", params.toString(), "-----114975832116442893661388290519", pic);
+		if(!result.contains("errcode\":0,")){
+			throw new IOException();
+		}
 	}
 	
 }

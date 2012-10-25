@@ -8,7 +8,7 @@ import cn.xxd.oauth.lib.UnAuthException;
 
 public class RenrenPostPic extends RenrenHandle {
 
-	public static String postPic(Token token, String text, String pic) throws IOException, UnAuthException{
+	public static void postPic(Token token, String text, String pic) throws IOException, UnAuthException{
 		if(token == null || isTokenExpire(token)){
 			throw new UnAuthException();
 		}
@@ -57,7 +57,10 @@ public class RenrenPostPic extends RenrenHandle {
 		params.append("Content-Disposition: form-data; name=\"" + "upload" + "\"; filename=\"" + "pic.png" + "\"\r\n");
         params.append("Content-Type: " + "image/png" + "\r\n\r\n");
         //
-		return httpPost("http://api.renren.com/restserver.do", params.toString(), "-----------------------------114975832116442893661388290519", pic);
-    }
+		String result = httpPost("http://api.renren.com/restserver.do", params.toString(), "-----------------------------114975832116442893661388290519", pic);
+		if(!result.contains("src_small")){
+			throw new IOException();
+		}
+	}
 	
 }
