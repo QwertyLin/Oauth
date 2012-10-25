@@ -12,7 +12,7 @@ import cn.xxd.oauth.lib.Token;
 import cn.xxd.oauth.lib.UnAuthException;
 
 
-import a1.OauthHelper;
+import a.OauthHelper;
 import android.content.Context;
 import android.os.Message;
 

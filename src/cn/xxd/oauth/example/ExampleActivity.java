@@ -4,7 +4,7 @@ import cn.xxd.oauth.R;
 import cn.xxd.oauth.lib.OnOauthListener;
 import cn.xxd.oauth.lib.Token;
 import cn.xxd.oauth.lib.request.SinaHandle;
-import a1.OauthHelper;
+import a.OauthHelper;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
