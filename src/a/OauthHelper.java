@@ -93,6 +93,14 @@ public class OauthHelper {
 		return list;
 	}
 	
+	public static Token getToken(Context ctx, int type){
+		TokenSqilte sqlite = new TokenSqilte(ctx);
+		sqlite.open(false);
+		Token token = sqlite.queryOne(type);
+		sqlite.close();
+		return token;
+	}
+	
 	public static void deleteTokenByType(Context ctx, int type){
 		TokenSqilte sqlite = new TokenSqilte(ctx);
 		sqlite.open(true);

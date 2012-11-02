@@ -72,7 +72,7 @@ public class TokenSqilte extends SQLiteOpenHelper {
 	}
 		
 	public void insert(Token e) {
-		if(queryOne(e) == null){
+		if(queryOne(e.getType()) == null){
 			db.insert("oauth_token", null, buildContentValues(e));
 		}else{
 			update(e);
@@ -112,10 +112,10 @@ public class TokenSqilte extends SQLiteOpenHelper {
 		return es;
 	}
 		
-	public Token queryOne(Token e) throws SQLException {
+	public Token queryOne(int type) throws SQLException {
 		//Cursor cs = db.query(true, DB_TABLE, new String[] { KEY_ID, KEY_DATA }, KEY_ID + "=" + id, null, null, null,null, null);
 		//Cursor cs = db.rawQuery("SELECT * FROM oauth_token WHERE type = ? AND id = ?", new String[]{String.valueOf(e.getType()), e.getId()});
-		Cursor cs = db.rawQuery("SELECT * FROM oauth_token WHERE type = ?", new String[]{String.valueOf(e.getType())});
+		Cursor cs = db.rawQuery("SELECT * FROM oauth_token WHERE type = ?", new String[]{String.valueOf(type)});
 		if(cs.moveToNext()){
 			return buildEntity(cs);
 		}else{
