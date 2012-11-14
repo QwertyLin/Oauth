@@ -30,12 +30,14 @@ public class QzonePostPic extends QzoneHandle {
 			throw new IOException();
 		}
 		JSONObject jsonO = new JSONObject(result);
-		JSONArray jsonA = jsonO.getJSONArray("album");
-		for(int i = 0, size = jsonA.length(); i < size; i++){
-			jsonO = jsonA.getJSONObject(i);
-			if(jsonO.getString("name").equals(album)){
-				albumId = jsonO.getString("albumid");
-				break;
+		if(jsonO.getInt("albumnum") != 0 ){
+			JSONArray jsonA = jsonO.getJSONArray("album");
+			for(int i = 0, size = jsonA.length(); i < size; i++){
+				jsonO = jsonA.getJSONObject(i);
+				if(jsonO.getString("name").equals(album)){
+					albumId = jsonO.getString("albumid");
+					break;
+				}
 			}
 		}
 		if(albumId == null){
