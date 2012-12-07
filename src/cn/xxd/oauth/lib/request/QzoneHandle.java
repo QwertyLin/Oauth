@@ -12,7 +12,6 @@ import cn.xxd.oauth.lib.Token;
 import cn.xxd.oauth.lib.UnAuthException;
 
 
-import a.OauthHelper;
 import android.content.Context;
 import android.os.Message;
 
@@ -38,7 +37,7 @@ public class QzoneHandle extends OauthHandle {
 	
 	@Override
 	public String getUrlParsePattern() {
-		return ".+access_token=(.+)&expires_in=(.+)";
+		return ".+access_token=(.+?)&.*expires_in=(.+)";
 	}
 
 	@Override

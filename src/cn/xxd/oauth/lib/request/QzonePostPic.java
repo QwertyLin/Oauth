@@ -56,7 +56,7 @@ public class QzonePostPic extends QzoneHandle {
 			if(!result.contains("ret\" : 0")){
 				throw new IOException();
 			}
-			jsonO = new JSONObject("result:" + result);
+			jsonO = new JSONObject(result);
 			albumId = jsonO.getString("albumid");
 		}
 		if(albumId == null){
